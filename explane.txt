@@ -1,0 +1,54 @@
+===============Feedback app================
+src
+	+index.js
+		>in here render App( <React.StrictMode> <App /> </React.StrictMode> )
+	+App.js
+		>represent components( <FeedbackForm /> )
+		>here use Routes (ReactJS Router is mainly used for developing Single Page Web Applications.)
+		  .import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+		  .<Router><Routes><Route path=""></Route><Route path=""></Route></Routes></Router>
+		>use context (this use for call components withouts props)
+		  .create context components
+		  .import { createContext} from "react"
+		  .const FeedbackContext = createContext();(use this for declare context )
+		  .export const FeedbackProvider = ({children}) =>{ //children means other tags wraps by provider 
+			write all useStates,useEffect in here
+			
+			 return (
+        			<FeedbackContext.Provider value={{Enter here all function name for recive anothor components}}>
+            				 {children}
+       				 </FeedbackContext.Provider>
+			 )
+		  .now wraps all children parts by <FeedbackProvider>children parts</FeedbackProvider>
+
+	+index.css
+		>include all css parts in here
+
+	component
+		AboutIconLink.jsx
+			>in here create a icon for go to about page
+			>import { FaQuestion } from "react-icons/fa" //use this get question mark
+			>import { Link } from "react-router-dom" //use this get link 
+			>now wrap the question mark by <Link to="path">question mark</Link>
+		FeedbackForm.jsx
+			>in here create form details(buttons ..)
+		FeedbackItem.jsx
+		FeedbackStates.jsx
+		Header.jsx
+		RatingSelect.jsx
+
+		Shared
+			Button.jsx
+			Card.jsx
+
+	Context
+		FeedbackContext.js
+
+	Data
+		FeedbackData.js
+
+	pages
+		AboutPage.jsx
+
+db.json
+
